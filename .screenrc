@@ -1,0 +1,66 @@
+#################################################
+# オプション
+#################################################
+# 現在のウィンドウに対して可視ベルの設定します。
+vbell off
+# ハングアップしたときにscreenは自動的にデタッチ
+autodetach on
+# 起動時に著作権表示
+startup_message off
+# スクロールバックバッファの大きさ
+defscrollback 1000
+# 画面の一番下の行を反転させてハードステータス表示
+hardstatus alwayslastline "%{= gk}[%m/%d %02c:%s] %{gW} %-w%{= wk}%n %t%{-}%+w %=%{gk}$USER@$HOSTNAME[$LANG] (%l) "
+# エスケープは<C-z>
+escape 
+# 背景色消去
+defbce "on"
+# シェルタイトル
+shelltitle '% |zsh'
+# ターミナル
+term xterm-256color
+###############################
+escape ^Tt
+termcap kterm hs@
+terminfo kterm hs@
+vbell off
+
+bind w windowlist -b
+
+bind -c REGION 2 split
+bind -c REGION 1 only
+bind -c REGION 0 remove
+bind -c REGION o focus
+# bind -c REGION \^ resize
+bind x command -c REGION
+# bind ^k kill
+# markkeys "h=^B:l=^F:$=^E"
+
+defhstatus "screen [^En:^Et] <${USER}@${HOST}:${PWD}>"
+hardstatus ignore "%w | %h"
+# hardstatus alwayslastline "%w"
+hardstatus alwayslastline "[%02c] %`%-w%{=b bw}%n %t%{-}%+w"
+
+shell -$SHELL
+startup_message off
+autodetach on
+defscrollback 10240
+
+# idle 1200
+# blankerprg /usr/bin/fortune starwars
+# defutf8 on
+
+## http://qootas.org/blog/archives/2006/03/256_colors_putt.html
+#term xterm-256color
+#termcapinfo xterm* 'Co#256:pa#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm:'
+term xterm-color
+#termcapinfo xterm* 'Co#256:pa#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm:'
+attrcolor b ".I"
+defbce "on"
+
+# screen -t Emacs 0 /usr/local/bin/emacs
+bind U eval "encoding utf-8" "!!!echo 'export LANG=ja_JP.UTF-8'"
+bind E eval "encoding euc" "!!!echo 'export LANG=ja_JP.EUC-JP'"
+
+# copy mode keybind as emacs
+# markkeys h=^b:l=^f:$=^e
