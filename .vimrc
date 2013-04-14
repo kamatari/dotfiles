@@ -52,7 +52,7 @@ autocmd WinEnter * setlocal nocursorline
 "set fileencoding=sjis
 "set fileencodings=utf-8,cp932,iso-2022-jp,euc-jp
 
-"you can change file encoding by type :Utf8 or :Eucjp
+"change file encoding by type :Utf8 or :Eucjp
 command! Eucjp edit ++enc=euc-jp
 command! Utf8 edit ++enc=utf8
 
