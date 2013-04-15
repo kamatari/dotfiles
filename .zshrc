@@ -163,6 +163,7 @@ preexec () {
 # ssh-agent
 # http://www.snowelm.com/~t/doc/tips/20030625.ja.html
 echo -n "ssh-agent: "
+source ~/.ssh-agent-info
 ssh-add -l >&/dev/null
 #if [ $? == 2 ] ; then # bash
 if (( $? == 2 )) ; then # zsh
@@ -174,3 +175,4 @@ if ssh-add -l >&/dev/null ; then
     echo "ssh-agent: Identity is already stored."
 else
     ssh-add
+fi
