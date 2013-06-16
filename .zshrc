@@ -61,27 +61,13 @@ alias svn=colorsvn
 alias tailp='tail -f /var/log/php.log'
 alias taila='tail -f /var/log/apache/access.log'
 alias taile='tail -f /var/log/apache/error.log'
+alias tree='nocorrect tree'
 
 #------------------------------------------------------------------------------------------#
 # bindkeys                                                                                 #
 #------------------------------------------------------------------------------------------#
 bindkey -e
 bindkey '\C-u' undo
-
-## dabbrev
-HARDCOPYFILE=$HOME/tmp/screen-hardcopy
-touch $HARDCOPYFILE
-
-dabbrev-complete () {
-    local reply lines=80 # 80??~L~F
-    screen -X eval "hardcopy -h $HARDCOPYFILE"
-    reply=($(sed '/^$/d' $HARDCOPYFILE | sed '$ d' | tail -$lines))
-    compadd - "${reply[@]%[*/=@|]}"
-}
-
-zle -C dabbrev-complete menu-complete dabbrev-complete
-bindkey '^o' dabbrev-complete
-bindkey '^o^_' reverse-menu-complete
 
 ## cd .. like dired of Emacs
 function cdup() {
