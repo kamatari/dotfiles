@@ -1,20 +1,18 @@
 #------------------------------------------------------------------------------------------#
 # environment variables                                                                    #
 ##------------------------------------------------------------------------------------------#
-#export LANG=ja_JP.UTF-8
-export LANG=ja_JP.EUC-JP
+export LANG=ja_JP.UTF-8
+#export LANG=ja_JP.EUC-JP
 export PATH=~/bin:/usr/local/bin:$PATH:/sbin:/usr/sbin:/usr/local/mysql/bin:/Applications/android-sdk-mac_x86/tools
-# export FTP_PASSIVE=1
-# export SVN_EDITOR=vi
-# export PAGER=jless
-# export PAGER="lv -c"
+export PATH=/usr/local/Cellar/ruby/2.0.0-p0/bin:$PATH
 
 ## enviroment variables for zsh
 autoload -Uz colors
 colors
-#PS1='[%n@%m %1d]%% '
-#PS1='%{${fg[blue]}%} %~ %{${fg[green]}%}%# %{${fg[red]}%}'
+
+# you can use black:red:green:yellow:blue:magenta:cyan:white
 PS1='%{$fg[cyan]%}[%n :%~%]]%(?.%{$fg[green]%}.%{$fg[red]%})%B$%b '
+
 HISTFILE=$HOME/.zsh-history
 HISTSIZE=100000
 SAVEHIST=100000
@@ -162,3 +160,4 @@ if ssh-add -l >&/dev/null ; then
 else
     ssh-add
 fi
+eval "$(rbenv init -)"
