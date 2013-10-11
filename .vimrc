@@ -25,7 +25,7 @@ au Insertleave * hi StatusLine guifg=DarkBlue guibg=White gui=none ctermfg=Black
 set helplang=ja
 
 "shortening input for php error_log
-:inorea error error_log(' ' . var_export(, true));
+:inorea error error_log(' ' . var_export(, true))
 
 "delete highlight of search word by esc x2
 :nnoremap <ESC><ESC> :nohlsearch<CR>
@@ -40,7 +40,7 @@ scriptencoding utf-8
 augroup highlightIdeographicSpace
   autocmd!
   autocmd ColorScheme * highlight IdeographicSpace term=underline ctermbg=DarkGreen guibg=DarkGreen
-  autocmd VimEnter,WinEnter * match IdeographicSpace /¡¡/
+  autocmd VimEnter,WinEnter * match IdeographicSpace /ï¿½ï¿½/
 augroup END
 colorscheme wombat
 
