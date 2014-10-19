@@ -3,8 +3,7 @@
 ##------------------------------------------------------------------------------------------#
 export LANG=ja_JP.UTF-8
 #export LANG=ja_JP.EUC-JP
-export PATH=~/bin:/usr/local/bin:$PATH:/sbin:/usr/sbin:/usr/local/mysql/bin:/Applications/android-sdk-mac_x86/tools
-export PATH=/usr/local/Cellar/ruby/2.0.0-p0/bin:$PATH
+export PATH=~/bin:/usr/local/bin:$PATH:/sbin:/usr/sbin:/usr/local/mysql/bin:/usr/local/Cellar/ruby/ruby2.1.2_2/bin
 
 ## enviroment variables for zsh
 autoload -Uz colors
@@ -142,22 +141,3 @@ preexec () {
 preexec () {
   [ ${STY} ] && echo -ne "\ek${1%% *}\e\\"
 }
-
-#############################################################
-# ssh-agent
-# http://www.snowelm.com/~t/doc/tips/20030625.ja.html
-echo -n "ssh-agent: "
-source ~/.ssh-agent-info
-ssh-add -l >&/dev/null
-#if [ $? == 2 ] ; then # bash
-if (( $? == 2 )) ; then # zsh
-    echo -n "ssh-agent: restart...."
-    ssh-agent >~/.ssh-agent-info
-    source ~/.ssh-agent-info
-fi
-if ssh-add -l >&/dev/null ; then
-    echo "ssh-agent: Identity is already stored."
-else
-    ssh-add
-fi
-eval "$(rbenv init -)"

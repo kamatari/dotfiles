@@ -2,9 +2,9 @@
 set title
 set ruler
 set showmode
-set ts=4 sw=4 sts=4
+set ts=2 sw=2 sts=0
 set autoindent
-set encoding=euc-jp
+set encoding=utf-8
 set showmatch
 set smartcase
 set incsearch
