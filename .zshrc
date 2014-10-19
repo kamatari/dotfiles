@@ -5,6 +5,9 @@ export LANG=ja_JP.UTF-8
 #export LANG=ja_JP.EUC-JP
 export PATH=~/bin:/usr/local/bin:$PATH:/sbin:/usr/sbin:/usr/local/mysql/bin:/usr/local/Cellar/ruby/ruby2.1.2_2/bin
 
+#python settings
+export PYTHONSTARTUP=~/.pythonstartup
+
 ## enviroment variables for zsh
 autoload -Uz colors
 colors
