@@ -1,0 +1,12 @@
+[user]
+  email = 
+  name  = 
+[alias]
+  st = status
+  co = checkout
+  br = branch
+  up = pull --rebase
+[color]
+  ui = auto
+[core]
+  pager = lv -c
