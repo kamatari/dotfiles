@@ -13,7 +13,7 @@ autoload -Uz colors
 colors
 
 # you can use black:red:green:yellow:blue:magenta:cyan:white
-PS1='%{$fg[cyan]%}[%n :%~%]]%(?.%{$fg[green]%}.%{$fg[red]%})%B$%b '
+PS1='%{$fg[cyan]%}[%m :%~%]]%(?.%{$fg[green]%}.%{$fg[red]%})%B$%b '
 
 HISTFILE=$HOME/.zsh-history
 HISTSIZE=100000
