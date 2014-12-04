@@ -21,6 +21,14 @@ set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%0
 au InsertEnter * hi StatusLine guifg=DarkBlue guibg=DarkYellow gui=none ctermfg=Blue ctermbg=Yellow cterm=none
 au Insertleave * hi StatusLine guifg=DarkBlue guibg=White gui=none ctermfg=Black ctermbg=White cterm=none
 
+"括弧を閉じた時に括弧の中へカーソルを移動
+imap {} {}<Left>
+imap [] []<Left>
+imap () ()<Left>
+imap "" ""<Left>
+imap '' ''<Left>
+imap <> <><Left>
+
 ":help >> japanese
 set helplang=ja
 
