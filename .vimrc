@@ -14,6 +14,8 @@ set expandtab
 syntax enable
 set background=dark
 
+colorscheme molokai
+
 "status line
 set laststatus=2
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
@@ -41,19 +43,6 @@ set helplang=ja
 "highlight EOLspace
 highlight WhitespaceEOL ctermbg=red guibg=red
 match WhitespaceEOL /\s\+$/
-autocmd WinEnter * match WhitespaceEOL /\s\+$/
-
-"highlight zenkaku
-scriptencoding utf-8
-augroup highlightIdeographicSpace
-  autocmd!
-  autocmd ColorScheme * highlight IdeographicSpace term=underline ctermbg=DarkGreen guibg=DarkGreen
-  autocmd VimEnter,WinEnter * match IdeographicSpace /��/
-augroup END
-colorscheme wombat
-
-autocmd WinEnter * setlocal cursorline
-autocmd WinEnter * setlocal nocursorline
 
 "set encoding=sjis
 "set fileencoding=euc-jp
