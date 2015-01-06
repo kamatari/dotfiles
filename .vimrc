@@ -35,6 +35,10 @@ imap <> <><Left>
 ":help >> japanese
 set helplang=ja
 
+"ノーマルモードの時に:と;を入れ替える (USキーボード用)
+nnoremap ; :
+nnoremap : ;
+
 "shortening input for php error_log
 :inorea error error_log(' ' . var_export(, true))
 
