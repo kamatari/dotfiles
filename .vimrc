@@ -2,7 +2,7 @@
 set title
 set ruler
 set showmode
-set ts=2 sw=2 sts=0
+set ts=4 sw=4 sts=4
 set autoindent
 set encoding=utf-8
 set showmatch
@@ -25,12 +25,12 @@ au InsertEnter * hi StatusLine guifg=DarkBlue guibg=DarkYellow gui=none ctermfg=
 au Insertleave * hi StatusLine guifg=DarkBlue guibg=White gui=none ctermfg=Black ctermbg=White cterm=none
 
 "括弧を閉じた時に括弧の中へカーソルを移動
-imap {} {}<Left>
-imap [] []<Left>
-imap () ()<Left>
-imap "" ""<Left>
-imap '' ''<Left>
-imap <> <><Left>
+"imap {} {}<Left>
+"imap [] []<Left>
+"imap () ()<Left>
+"imap "" ""<Left>
+"imap '' ''<Left>
+"imap <> <><Left>
 
 ":help >> japanese
 set helplang=ja
