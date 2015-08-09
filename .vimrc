@@ -40,7 +40,7 @@ nnoremap ; :
 nnoremap : ;
 
 "shortening input for php error_log
-:inorea error error_log(' ' . var_export(, true))
+:inorea error_ error_log(' ' . var_export(, true))
 
 "delete highlight of search word by esc x2
 :nnoremap <ESC><ESC> :nohlsearch<CR>
