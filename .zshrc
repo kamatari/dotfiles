@@ -114,6 +114,9 @@ setopt print_eight_bit
 setopt complete_in_word # ZSH FAQ: 4.4
 setopt complete_aliases
 setopt share_history
+
+setopt interactivecomments #標準入力で"#"を使えるようにする
+
 unsetopt ignore_eof
 unsetopt hash_cmds
 zstyle ':completion:*:default' menu select=1
