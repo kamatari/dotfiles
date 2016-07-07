@@ -5,11 +5,21 @@ export LANG=ja_JP.UTF-8
 #export LANG=ja_JP.EUC-JP
 export PATH=~/bin:/usr/local/bin:$PATH:/sbin:/usr/sbin:/usr/local/mysql/bin:/usr/local/Cellar/ruby/ruby2.1.2_2/bin:$GOPATH/bin
 
+# added by Anaconda3 2.5.0 installer
+export PATH="//anaconda/bin:$PATH"
+alias jupyter='ipython notebook'
+
 #python settings
 export PYTHONSTARTUP=~/.pythonstartup
 
 #golang settings
 export GOPATH=$HOME/proj/go
+
+#git diff-highlight
+export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
+# $ git config --global pager.log 'diff-highlight | less'
+# $ git config --global pager.show 'diff-highlight | less'
+# $ git config --global pager.diff 'diff-highlight | less'
 
 ## enviroment variables for zsh
 autoload -Uz colors
@@ -61,10 +71,15 @@ alias tm='tmux'
 alias grep='grep --color'
 alias svn=colorsvn
 
+alias dnsclear='sudo dscacheutil -flushcache'
+
 alias tailp='tail -f /var/log/php.log'
 alias taila='tail -f /var/log/apache/access.log'
 alias taile='tail -f /var/log/apache/error.log'
 alias tree='nocorrect tree'
+
+alias py='python3'
+
 
 #------------------------------------------------------------------------------------------#
 # bindkeys                                                                                 #
@@ -147,3 +162,7 @@ if ssh-add -l >&/dev/null ; then
 else
     ssh-add
 fi
+export PGDATA="/usr/local/var/postgres"
+
+export NVM_DIR="/Users/kamatari/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
