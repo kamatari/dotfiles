@@ -147,6 +147,21 @@ autoload -U compinit
 compinit
 setopt auto_pushd
 
+# incremental search of history using peco
+function peco-history-selection() {
+    BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
+    CURSOR=$#BUFFER
+    zle reset-prompt
+}
+zle -N peco-history-selection
+bindkey '^R' peco-history-selection
+
+# ghi & peco
+show_open_issues_on_web() {
+  ghi show -w $(ghi list --filter 'all'| peco)
+}
+alias si=show_open_issues_on_web
+
 # ssh-agent (reference => http://www.snowelm.com/~t/doc/tips/20030625.ja.html)
 echo -n "ssh-agent: "
 source ~/.ssh-agent-info
