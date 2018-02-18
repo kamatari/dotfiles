@@ -1,12 +1,16 @@
 [user]
-  email = 
-  name  = 
+	email =
+	name =
 [alias]
-  st = status
-  co = checkout
-  br = branch
-  up = pull --rebase
+    st = status
+    co = checkout
+    br = branch
+    up = pull --rebase
 [color]
-  ui = auto
+    ui = auto
+	diff = auto
+	status = auto
+	branch = auto
 [core]
-  pager = lv -c
+    pager = lv -c
+	editor = vim -c \"set fenc=utf-8\"
